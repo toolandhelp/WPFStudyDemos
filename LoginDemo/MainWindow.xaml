@@ -1,0 +1,39 @@
+﻿<Window x:Class="LoginDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginDemo"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="登录" Height="500" Width="300" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Rectangle Height="280" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                    <GradientStop Color="#FF2281D1" />
+                    <GradientStop Color="#FF34268A" Offset="1" />
+                    <GradientStop Color="#FF33288B" Offset="0.5" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="/LoginDemo;Component/Assets/head.png" Width="100" Height="100" VerticalAlignment="Top" Margin="20" />
+        <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,100" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" Opacity="100" RenderingBias="Quality" ShadowDepth="1"  />
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,100">
+            <TextBlock Text="🎆登 🍼 录🎆" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Foreground="Gray" FontSize="18" />
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <TextBox  materialDesign:HintAssist.Hint="邮 箱" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10" FontFamily="黑体" FontSize="18" />
+                <PasswordBox  materialDesign:HintAssist.Hint="密 码" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0,10"  FontFamily="黑体" FontSize="18" />
+            </StackPanel>
+        </Grid>
+
+        <Button VerticalAlignment="Bottom" Margin="75,90" Content=" 登 录 " />
+
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="忘记密码？注册新用户" Margin="60" Cursor="Hand" />
+    </Grid>
+</Window>
