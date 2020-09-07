@@ -34,6 +34,7 @@
 
         <Button VerticalAlignment="Bottom" Margin="75,90" Content=" 登 录 " />
 
-        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="忘记密码？注册新用户" Margin="60" Cursor="Hand" />
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="忘记密码？" Margin="60" Cursor="Hand" />
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Text="注册新用户" Margin="60" Cursor="Hand" />
     </Grid>
 </Window>
