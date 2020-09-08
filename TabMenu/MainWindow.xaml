@@ -1,0 +1,52 @@
+﻿<Window x:Class="TabMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TabMenu"
+        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  WindowStyle="None" WindowState="Normal">
+    <StackPanel Background="WhiteSmoke">
+        <Grid Height="40">
+            <StackPanel HorizontalAlignment="Left" Margin="20,0">
+                <ComboBox FontSize="15" Width="80" Foreground="#FFA2A2A2" SelectedIndex="0" VerticalAlignment="Center">
+                    <ComboBoxItem Content="简体中文" />
+                    <ComboBoxItem Content="繁体中文" />
+                    <ComboBoxItem Content=" English" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0" >
+                <Button Content="疑 问" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" />
+                <Button Content="联 系" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" />
+                <Button Content="订单状态" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" />
+                <Button Content="我的账户" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" />
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" >
+                    <materialDesign:PackIcon Kind="Power" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Height="100">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,0" Height="50">
+                <Button Uid="0" Width="90" Content=" 首 页 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="1" Width="90" Content="示 范 区" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="2" Width="90" Content=" 楼 盘 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="3" Width="90" Content="效 果 图" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="4" Width="90" Content="SU 模 型" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="5" Width="90" Content=" 总 图 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="6" Width="90" Content=" 平 面 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="7" Width="90" Content=" 文 本 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="8" Width="90" Content="建筑规范" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="9" Width="90" Content="室内案例" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="10" Width="90" Content="新 楼 盘" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+            </StackPanel>
+            <Grid x:Name="GridCursor" Width="90" Height="5" Background="#FF2196F3" HorizontalAlignment="Left" Margin="10,0">
+                
+            </Grid>
+        </Grid>
+        
+        <Grid x:Name="GridMaim" Height="460" Background="Aqua">
+            
+        </Grid>
+        
+    </StackPanel>
+</Window>
