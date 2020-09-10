@@ -9,6 +9,7 @@
         Title="MainWindow" Height="600" Width="1080"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
+
         <Storyboard x:Key="CloseMenu">
 
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMenu">
@@ -30,6 +31,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+
     </Window.Resources>
 
     <Window.Triggers>
@@ -40,8 +42,9 @@
             <BeginStoryboard  Storyboard="{StaticResource OpneMenu}" />
         </EventTrigger>
     </Window.Triggers>
-    
+
     <Grid>
+
         <Grid x:Name="GridBackground" Background="#55313131" Opacity="0"/>
 
         <Button x:Name="ButtonOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" 
@@ -58,7 +61,7 @@
                     <TranslateTransform />
                 </TransformGroup>
             </Grid.RenderTransform>
-            
+
             <StackPanel>
                 <Image Height="140" Source="Assets/bg.jpg" Stretch="UniformToFill" />
                 <ListView Foreground="#FF313131" FontSize="18" FontFamily="Champagne &amp; Limousines">
@@ -68,13 +71,13 @@
                             <TextBlock Text="Recycle"  Margin="10" />
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="45" Padding="0">
+                    <ListViewItem Height="45" Padding="0" MouseLeftButtonUp="ListViewItem_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal" Margin="10,0">
                             <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="Orange"  Margin="5" VerticalAlignment="Center" />
                             <TextBlock Text="Help"  Margin="10" />
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="45" Padding="0">
+                    <ListViewItem Height="45" Padding="0" MouseDoubleClick="ListViewItem_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal" Margin="10,0">
                             <materialDesign:PackIcon Kind="Feedback" Width="20" Height="20" Foreground="Purple"  Margin="5" VerticalAlignment="Center" />
                             <TextBlock Text="Send Feedback"  Margin="10" />
@@ -98,13 +101,23 @@
                             <TextBlock Text="Settings"  Margin="10" />
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="45" Padding="0">
+                        <StackPanel Orientation="Horizontal" Margin="10,0">
+                            <materialDesign:PackIcon Kind="Settings" Width="20" Height="20" Foreground="Blue"  Margin="5" VerticalAlignment="Center" />
+                            <Button Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" >
+                                设置
+                            </Button>
+                            <!--<TextBlock Text="Settings"  Margin="10" />-->
+                        </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
             <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" 
                     BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">
-                <materialDesign:PackIcon Kind="Close"  Foreground="White" /> 
+                <materialDesign:PackIcon Kind="Close"  Foreground="White" />
             </Button>
         </Grid>
+
     </Grid>
 </Window>
  

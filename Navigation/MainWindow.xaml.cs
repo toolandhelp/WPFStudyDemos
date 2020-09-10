@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using Navigation.Domin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +21,25 @@ namespace Navigation
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {   
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Link.OpenInBrowser("https://feedback.com/");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Link.OpenInBrowser("https://feedback.com/");
+        }
+
+        private void DialogHost_OnDialogClosing(object sender,DialogClosingEventArgs e)
+        {
+            Console.WriteLine("关闭事件……");
         }
     }
 }
