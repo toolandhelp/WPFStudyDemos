@@ -25,24 +25,107 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <Grid Height="100">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,0" Height="50">
-                <Button Uid="0" Width="90" Content=" 首 页 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="1" Width="90" Content="示 范 区" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="2" Width="90" Content=" 楼 盘 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="3" Width="90" Content="效 果 图" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="4" Width="90" Content="SU 模 型" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="5" Width="90" Content=" 总 图 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="6" Width="90" Content=" 平 面 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="7" Width="90" Content=" 文 本 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="8" Width="90" Content="建筑规范" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="9" Width="90" Content="室内案例" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-                <Button Uid="10" Width="90" Content="新 楼 盘" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
-            </StackPanel>
-            <Grid x:Name="GridCursor" Width="90" Height="5" Background="#FF2196F3" HorizontalAlignment="Left" Margin="10,0">
-                
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,0" Height="50">
+                    <Button Uid="0" Width="90" Content=" 首 页 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="1" Width="90" Content="示 范 区" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="2" Width="90" Content=" 楼 盘 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="3" Width="90" Content="效 果 图" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="4" Width="90" Content="SU 模 型" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="5" Width="90" Content=" 总 图 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="6" Width="90" Content=" 平 面 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="7" Width="90" Content=" 文 本 " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="8" Width="90" Content="建筑规范" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="9" Width="90" Content="室内案例" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                    <Button Uid="10" Width="90" Content="新 楼 盘" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                </StackPanel>
+                <Grid x:Name="GridCursor" Width="90" Height="5" Background="#FF2196F3" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom">
+
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <!--<Rectangle Fill="#111111" />-->
+                <ListBox Width="Auto" ScrollViewer.CanContentScroll="True" Foreground="#FF2196F3" FontSize="16" FontWeight="Bold" Margin="10,0" BorderThickness="0">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <StackPanel Width="90" Background="Transparent"  Orientation="Vertical" Name="Container" Cursor="Hand">
+                                            <ContentPresenter Height="35" HorizontalAlignment="Center" Margin="0,10,0,0" MouseUp="ContentPresenter_MouseUp" />
+                                            <Rectangle Fill="DarkBlue" VerticalAlignment="Bottom" Width="90" Height="5" Visibility="Hidden" Name="BottomSideRectangle" />
+                                        </StackPanel>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" TargetName="BottomSideRectangle" />
+                                                <Setter Property="Background" Value="AntiqueWhite" TargetName="Container"  />
+                                            </Trigger>
+
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" TargetName="BottomSideRectangle" />
+                                                <Setter Property="Background" Value="Beige" TargetName="Container" />
+                                            </Trigger>
+
+                                        </ControlTemplate.Triggers>
+                                        
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="1" Content="示 范 区" />
+                    <ListBoxItem Uid="2" Content=" 楼 盘 " />
+                    <ListBoxItem Uid="3" Content="效 果 图" />
+                    <ListBoxItem Uid="4" Content="SU 模 型" />
+                    <ListBoxItem Uid="5" Content=" 总 图 " />
+                    <ListBoxItem Uid="6" Content=" 平 面 " />
+                    <ListBoxItem Uid="7" Content=" 文 本 " />
+                    <ListBoxItem Uid="8" Content="建筑规范" />
+                    <ListBoxItem Uid="9" Content="室内案例" />
+                    <ListBoxItem Uid="10" Content=" 新 楼 盘" />
+                    <ListBoxItem Uid="11" Content=" 首 页 1" />
+                    <ListBoxItem Uid="12" Content=" 首 页 2" />
+                    <ListBoxItem Uid="13" Content=" 首 页 3" />
+                    <ListBoxItem Uid="0" Content=" 首 页 4" />
+                    <ListBoxItem Uid="0" Content=" 首 页 5" />
+                    <ListBoxItem Uid="0" Content=" 首 页 6" />
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="0" Content=" 首 页 " />
+                    <ListBoxItem Uid="0" Content=" 首 页 2" />
+                    <ListBoxItem Uid="0" Content=" 首 页 4" />
+                    <ListBoxItem Uid="0" Content=" 首 页 5" />
+                    <ListBoxItem Uid="0" Content=" 首 页 6" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页" />
+                    <ListBoxItem Uid="0" Content=" 首 页 1" />
+
+                </ListBox>
             </Grid>
         </Grid>
+     
         
         <Grid x:Name="GridMaim" Height="460" Background="Aqua">
             
