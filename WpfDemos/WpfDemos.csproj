@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\applogo.png" />
     <None Remove="Assets\djyt.jpg" />
+    <None Remove="Assets\memory-card.png" />
     <None Remove="Assets\timg.jpg" />
   </ItemGroup>
 
