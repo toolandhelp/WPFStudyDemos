@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/FileManager/UserControls/UCmediumSizeButtons.xaml.cs
+/FileManager/UserControls/UCmediumSizeButtons.xaml

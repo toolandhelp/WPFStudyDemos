@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="789" Width="1024"
+        Title="MainWindow" Height="789" Width="1500"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
         AllowsTransparency="True" Background="Transparent">
     <Window.Resources>
@@ -146,13 +146,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="profileBtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="50" />
+        </Style>
+        
     </Window.Resources>
 
     <Border Background="Transparent">
         <Border Background="#FF37A0EA" CornerRadius="20" BorderThickness="0">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="70" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" >
@@ -289,6 +297,98 @@
                                     </Button.Content>
                                 </Button>
                             </StackPanel>
+
+                            <!--第三块 头部 搜索区域-->
+                            <Border Grid.Column="2" Grid.RowSpan="3" Background="Transparent" Visibility="{Binding Visibility}">
+                                <Border Background="#FFF3F6F9" CornerRadius="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="100" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Grid.Row="0" Margin="15,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition MinWidth="523" Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <!--#rengion Searchbar code-->
+                                            <Border Grid.Column="0" Background="Transparent" Visibility="{Binding Visibility}">
+                                                <Border Background="White" Height="50" CornerRadius="10" HorizontalAlignment="Stretch">
+                                                    <Grid Height="Auto">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="50" />
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Image Source="Assets/search.png" Stretch="Uniform" Width="25"/>
+                                                        <TextBox Grid.Column="1" x:Name="searchQuery" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" TextAlignment="Left" VerticalContentAlignment="Center" Background="Transparent" />
+                                                        <TextBlock Grid.Column="1" Margin="3,0" Text="Search something..." FontWeight="Bold" HorizontalAlignment="Left" TextAlignment="Left" VerticalAlignment="Center" Foreground="LightGray" IsHitTestVisible="False">
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="{x:Type TextBlock}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Text,ElementName=searchQuery}" Value="">
+                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+                                                    </Grid>
+                                                </Border>
+                                            </Border>
+                                            <!--#endregion-->
+
+                                            <Grid Margin="15,0" Grid.Column="1" HorizontalAlignment="Right">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="50" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Margin="0,0,25,0" Height="30" Source="Assets/bell.png" Stretch="Uniform" />
+                                                <TextBlock Grid.Column="1" Text="你好，jd" TextAlignment="Right" Margin="0,0,15,0" FontWeight="Bold" Foreground="DarkSlateGray" VerticalAlignment="Center"/>
+                                                <Button Grid.Column="2" x:Name="btnProfile" Style="{StaticResource profileBtnStyle}">
+                                                    <Button.Template>
+                                                        <ControlTemplate TargetType="{x:Type Button}" >
+                                                            <Grid>
+                                                                <Ellipse>
+                                                                    <Ellipse.Fill>
+                                                                        <ImageBrush Stretch="Uniform" ImageSource="Assets/user.png" />
+                                                                    </Ellipse.Fill>
+                                                                </Ellipse>
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Button.Template>    
+                                                </Button>
+                                            </Grid>
+                                            
+                                        </Grid>
+
+                                        <Grid Grid.Row="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                        </Grid>
+                                        
+                                        <!--开片按钮-->
+                                        <UniformGrid Columns="3" HorizontalAlignment="Center" Margin="8,15,15,8">
+                                            
+                                        </UniformGrid>
+
+                                    </Grid>
+                                </Border>
+                            </Border>
                         </Grid>
                     </Border>
                 </Grid>

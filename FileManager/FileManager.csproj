@@ -55,10 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UCmediumSizeButtons.xaml.cs">
+    <Compile Include="UserControls\UCmediumSizeButtons.xaml.cs">
       <DependentUpon>UCmediumSizeButtons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UCproCard.xaml.cs">
+    <Compile Include="UserControls\UCproCard.xaml.cs">
       <DependentUpon>UCproCard.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -73,13 +73,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UCmediumSizeButtons.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UserControls\UCmediumSizeButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="UCproCard.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UserControls\UCproCard.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +158,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\noimage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
