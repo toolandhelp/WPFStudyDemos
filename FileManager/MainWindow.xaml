@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileManager"
-        xmlns:ccontrols="clr-namespace:FileManager"
+        xmlns:ccontrols="clr-namespace:FileManager.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="789" Width="1500"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
@@ -385,9 +385,9 @@
                                         <!--开片按钮-->
                                         <Viewbox>
                                             <UniformGrid Columns="3" HorizontalAlignment="Center" Margin="8,15,15,8">
-                                                <ccontrols:UCcardButtons text1="Dropbox" text2="67 Gb / 128 Gb" imageSource="/Assets/dropbox.png" Progress="56" />
-                                                <ccontrols:UCcardButtons text1="Dropbox" text2="67 Gb / 128 Gb" imageSource="/Assets/dropbox.png" Progress="56" />
-                                                <ccontrols:UCcardButtons text1="Dropbox" text2="67 Gb / 128 Gb" imageSource="/Assets/dropbox.png" Progress="56" />
+                                                <ccontrols:UCcardButtons Text1="Dropbox" Text2="67 Gb / 128 Gb" ImageSource="/Assets/dropbox.png" Progress="56" />
+                                                <ccontrols:UCcardButtons Text1="Dropbox" Text2="67 Gb / 128 Gb" ImageSource="/Assets/dropbox.png" Progress="56" />
+                                                <ccontrols:UCcardButtons Text1="Dropbox" Text2="67 Gb / 128 Gb" ImageSource="/Assets/dropbox.png" Progress="56" />
                                                 <!--<local:UCcardButtons />-->
                                             </UniformGrid>
                                         </Viewbox>

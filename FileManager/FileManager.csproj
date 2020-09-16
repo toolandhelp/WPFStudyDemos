@@ -63,7 +63,6 @@
     </Compile>
     <Compile Include="UserControls\UCcircularProgressBar.xaml.cs">
       <DependentUpon>UCcircularProgressBar.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="UserControls\UCmediumSizeButtons.xaml.cs">
       <DependentUpon>UCmediumSizeButtons.xaml</DependentUpon>
@@ -89,7 +88,7 @@
     </Page>
     <Page Include="UserControls\UCcircularProgressBar.xaml">
       <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCmediumSizeButtons.xaml">
       <Generator>MSBuild:Compile</Generator>

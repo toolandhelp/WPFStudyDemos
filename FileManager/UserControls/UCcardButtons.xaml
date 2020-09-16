@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="FileManager.UCcardButtons"
+﻿<UserControl x:Class="FileManager.UserControls.UCcardButtons"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FileManager"
+             xmlns:local="clr-namespace:FileManager.UserControls"
              mc:Ignorable="d" 
              x:Name="_cardButton"
              d:DesignHeight="150" d:DesignWidth="250" MinHeight="150" MinWidth="150">
@@ -105,13 +105,13 @@
 
 
                 <Border Grid.Column="0" Grid.Row="0" Background="Transparent" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,5,0,0" Height="35" Width="35" Style="{StaticResource ButtonIconBackground}">
-                    <Image Width="20" Stretch="Uniform" Source="{Binding ElementName=_cardButton,Path=imageSource,TargetNullValue={x:Null}}"/>
+                    <Image Width="20" Stretch="Uniform" Source="{Binding ElementName=_cardButton,Path=ImageSource,TargetNullValue={x:Null}}"/>
                 </Border>
                 <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Stretch">
-                    <TextBlock Text="{Binding ElementName=_cardButton,Path=text1}" Style="{StaticResource TextStyle1}"/>
-                    <TextBlock Text="{Binding ElementName=_cardButton,Path=text2}" Style="{StaticResource TextStyle2}"/>
+                    <TextBlock Text="{Binding ElementName=_cardButton,Path=Text1}" Style="{StaticResource TextStyle1}"/>
+                    <TextBlock Text="{Binding ElementName=_cardButton,Path=Text2}" Style="{StaticResource TextStyle2}"/>
                 </StackPanel>
-                <local:UCcircularProgressBar Grid.Column="1" Grid.RowSpan="2" Margin="0,0,0,22" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="54" Width="54" Value="{Binding ElementName=_cardButton,Path=Progress}" FontSize="25" ArcThickness="4" />
+                <local:UCcircularProgressBar Grid.Column="1" Grid.RowSpan="2" Margin="0,0,0,22" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="54" Width="54" Value="{Binding ElementName=_cardButton,Path=Progress}" FontSize="25"  />
             </Grid>
         </Button>
     </Grid>

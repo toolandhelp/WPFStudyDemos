@@ -1,21 +1,21 @@
-﻿<UserControl x:Class="FileManager.UCcircularProgressBar"
+﻿<UserControl x:Class="FileManager.UserControls.UCcircularProgressBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FileManager"
+             xmlns:local="clr-namespace:FileManager.UserControls"
              mc:Ignorable="d" 
              xmlns:ccontrols="http://schemas.microsoft.com/expression/2010/drawing"
              x:Name="circularProgress"
-             d:DesignHeight="50" d:DesignWidth="50">
+            d:DesignHeight="50" d:DesignWidth="50">
+    
     <UserControl.Resources>
         <local:ValueToAngleConverter x:Key="ValueToAngleConverter"/>
-        <!--<local:ValueToAngleConverter x:Key="ValueToAngleConverter" />
-        <local:ValueToTextConverter x:Key="ValueToTextConverter" />-->
+        <local:ValueToTextConverter x:Key="ValueToTextConverter" />
     </UserControl.Resources>
     <Grid>
         <ccontrols:Arc ArcThickness="{Binding ElementName=circularProgress,Path=ArcThickness}" EndAngle="360" Stretch="None" />
         <Label Content="{Binding Converter={StaticResource ValueToTextConverter}, ElementName=circularProgress,Path=Value}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <ccontrols:Arc ArcThickness="{Binding ElementName=circularProgress,Path=ArcThickness}" EndAngle="{Binding Converter={StaticResource ValueToAngleConverter}, ElementName=circularProgress,Path=Value}" Stretch="None" /> 
+        <ccontrols:Arc ArcThickness="{Binding ElementName=circularProgress,Path=ArcThickness}" EndAngle="{Binding Converter={StaticResource ValueToAngleConverter}, ElementName=circularProgress,Path=Value}" Stretch="None" />
     </Grid>
 </UserControl>

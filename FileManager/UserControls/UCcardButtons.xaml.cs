@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FileManager
+namespace FileManager.UserControls
 {
     /// <summary>
     /// UCcardButtons.xaml 的交互逻辑
@@ -25,44 +25,41 @@ namespace FileManager
             InitializeComponent();
         }
 
-
-
-
-        public Uri imageSource
+        public Uri ImageSource
         {
-            get { return (Uri)GetValue(imageSourceProperty); }
-            set { SetValue(imageSourceProperty, value); }
+            get { return (Uri)GetValue(ImageSourceProperty); }
+            set { SetValue(ImageSourceProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for imageSource.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty imageSourceProperty =
-            DependencyProperty.Register("imageSource", typeof(Uri), typeof(UCcardButtons));
+        // Using a DependencyProperty as the backing store for ImageSource.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ImageSourceProperty =
+            DependencyProperty.Register("ImageSource", typeof(Uri), typeof(UCcardButtons));
 
 
 
 
-        public string text1
+        public string Text1
         {
-            get { return (string)GetValue(text1Property); }
-            set { SetValue(text1Property, value); }
+            get { return (string)GetValue(Text1Property); }
+            set { SetValue(Text1Property, value); }
         }
 
-        // Using a DependencyProperty as the backing store for text1.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty text1Property =
-            DependencyProperty.Register("text1", typeof(string), typeof(UCcardButtons));
+        // Using a DependencyProperty as the backing store for Text1.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Text1Property =
+            DependencyProperty.Register("Text1", typeof(string), typeof(UCcardButtons));
 
 
 
 
-        public string text2
+        public string Text2
         {
-            get { return (string)GetValue(text2Property); }
-            set { SetValue(text2Property, value); }
+            get { return (string)GetValue(Text2Property); }
+            set { SetValue(Text2Property, value); }
         }
 
-        // Using a DependencyProperty as the backing store for text2.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty text2Property =
-            DependencyProperty.Register("text2", typeof(string), typeof(UCcardButtons));
+        // Using a DependencyProperty as the backing store for Text2.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Text2Property =
+            DependencyProperty.Register("Text2", typeof(string), typeof(UCcardButtons));
 
 
 
@@ -75,7 +72,6 @@ namespace FileManager
         // Using a DependencyProperty as the backing store for Progress.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ProgressProperty =
             DependencyProperty.Register("Progress", typeof(int), typeof(UCcardButtons));
-
 
 
     }
