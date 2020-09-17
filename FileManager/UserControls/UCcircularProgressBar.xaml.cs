@@ -75,6 +75,31 @@ namespace FileManager.UserControls
 
 
 
+        public Brush PFontColor
+        {
+            get { return (Brush)GetValue(PFontColorProperty); }
+            set { SetValue(PFontColorProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PFontColor.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PFontColorProperty =
+            DependencyProperty.Register("PFontColor", typeof(Brush), typeof(UCcircularProgressBar));
+
+
+        public Color PFontWeight
+        {
+            get { return (Color)GetValue(PFontWeightProperty); }
+            set { SetValue(PFontWeightProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PFontWeight.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PFontWeightProperty =
+            DependencyProperty.Register("PFontWeight", typeof(Color), typeof(UCcircularProgressBar));
+
+
+
+
+
     }
 
     [ValueConversion(typeof(int), typeof(double))]

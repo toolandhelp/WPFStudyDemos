@@ -64,6 +64,12 @@
     <Compile Include="UserControls\UCcircularProgressBar.xaml.cs">
       <DependentUpon>UCcircularProgressBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCfileListControl.xaml.cs">
+      <DependentUpon>UCfileListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCimageButtons.xaml.cs">
+      <DependentUpon>UCimageButtons.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCmediumSizeButtons.xaml.cs">
       <DependentUpon>UCmediumSizeButtons.xaml</DependentUpon>
     </Compile>
@@ -87,6 +93,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCcircularProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCfileListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCimageButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +207,28 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\videos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\apps.png" />
+    <Resource Include="Assets\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\documents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\downloads.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\pulsblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
