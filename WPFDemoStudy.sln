@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDemos", "WpfDemos\WpfDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{4345A1D8-79B7-4743-B8AA-4BEA565E1A18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat_2", "Chat_2\Chat_2.csproj", "{E2D61978-4FB5-4FE0-B0F9-C9F032AF77B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{4345A1D8-79B7-4743-B8AA-4BEA565E1A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4345A1D8-79B7-4743-B8AA-4BEA565E1A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4345A1D8-79B7-4743-B8AA-4BEA565E1A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D61978-4FB5-4FE0-B0F9-C9F032AF77B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D61978-4FB5-4FE0-B0F9-C9F032AF77B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D61978-4FB5-4FE0-B0F9-C9F032AF77B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D61978-4FB5-4FE0-B0F9-C9F032AF77B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{E21DABDD-4CC0-48A0-AA84-6616CE0D1306} = {5F812AC5-4B26-4851-B1D3-0CF3A10D6EEC}
 		{704F4177-C72B-43E0-A5D1-82C7E30F524F} = {0E99EEDF-DE8A-4A36-965E-1D9B9F54B0D6}
 		{4345A1D8-79B7-4743-B8AA-4BEA565E1A18} = {0E99EEDF-DE8A-4A36-965E-1D9B9F54B0D6}
+		{E2D61978-4FB5-4FE0-B0F9-C9F032AF77B4} = {0E99EEDF-DE8A-4A36-965E-1D9B9F54B0D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {578623A8-9DDE-4CCA-894D-82001D47197E}
