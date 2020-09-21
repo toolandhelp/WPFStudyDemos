@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserUcontrols\UCChatList.xaml.cs">
+      <DependentUpon>UCChatList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserUcontrols\UCMenuListControl.xaml.cs">
       <DependentUpon>UCMenuListControl.xaml</DependentUpon>
     </Compile>
@@ -77,6 +81,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserUcontrols\UCChatList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserUcontrols\UCMenuListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +130,34 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\noimageerror.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\user-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\puls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\user-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\user-9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

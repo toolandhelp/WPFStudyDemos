@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Chat_2.ViewModels
 {
@@ -26,6 +27,71 @@ namespace Chat_2.ViewModels
                 };
             }
         }
+
+        public List<ChatListItems> ChatListItems
+        {
+
+            get
+            {
+                return new List<ChatListItems>
+                {
+                    new ChatListItems()
+                    {
+                        IsChatSelected=false,
+                        ContactProfilePic="/assets/user-10.png",
+                        ContactName="用户01",
+                        IsOnline=true,
+                        LastMessageTime="10：20 PM",
+                        Availability="Online",
+                        IsRead=false,
+                        Message="zaibuzai.人呢sdfsssssssssssssssssssssssssssssssssssssfdsf xx？",
+                        NewMsgCount=2
+                    },
+                     new ChatListItems()
+                    {
+                        IsChatSelected=false,
+                        ContactProfilePic="/assets/user-9.png",
+                        ContactName="用户02",
+                        LastMessageTime="10：20 PM",
+                        Availability="Online",
+                        IsRead=true,
+                        Message="zaibuzai.人呢？",
+                        NewMsgCount=2
+                    },
+                      new ChatListItems()
+                    {
+                        IsChatSelected=false,
+                        ContactProfilePic="/assets/user-1.png",
+                        ContactName="用户04",
+                        LastMessageTime="2020-09-16",
+                        Availability="Offline",
+                        IsRead=true,
+                        Message="下线咯.人呢？"
+                    },
+                      new ChatListItems()
+                    {
+                        IsChatSelected=false,
+                        ContactProfilePic="/assets/user-1.png",
+                        ContactName="用户04",
+                        LastMessageTime="2020-09-16",
+                        Availability="Offline",
+                        IsRead=true,
+                        Message="下线咯.人呢？"
+                    },
+                      new ChatListItems()
+                    {
+                        IsChatSelected=false,
+                        ContactProfilePic="/assets/user-1.png",
+                        ContactName="用户04",
+                        LastMessageTime="2020-09-16",
+                        Availability="Offline",
+                        IsRead=true,
+                        Message="下线咯.人呢？"
+                    }
+
+                };
+            }
+        }
     }
 
     public class MenuItems
@@ -35,4 +101,21 @@ namespace Chat_2.ViewModels
         public int ListItemHeight { get; set; }
         public bool IsItemSelected { get; set; }
     }
+
+    public class ChatListItems
+    {
+        public bool IsChatSelected { get; set; }
+
+        public string ContactProfilePic { get; set; }
+
+        public bool IsOnline { get; set; } 
+        public string ContactName { get; set; }
+        
+        public string LastMessageTime { get; set; }
+        public string Availability { get; set; }
+        public bool IsRead { get; set; }
+        public string Message { get; set; }
+        public int NewMsgCount { get; set; }
+    }
 }
+
