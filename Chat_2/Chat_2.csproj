@@ -59,6 +59,9 @@
     <Compile Include="UserUcontrols\UCChatList.xaml.cs">
       <DependentUpon>UCChatList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserUcontrols\UCConversation.xaml.cs">
+      <DependentUpon>UCConversation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserUcontrols\UCMenuListControl.xaml.cs">
       <DependentUpon>UCMenuListControl.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserUcontrols\UCChatList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserUcontrols\UCConversation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,7 +139,9 @@
     <Resource Include="Assets\chat.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\noimageerror.png" />
+    <EmbeddedResource Include="Assets\noimageerror.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\user-10.png" />
@@ -158,6 +167,16 @@
     <Resource Include="Assets\user-9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\more.png" />
+    <Resource Include="Assets\videocall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

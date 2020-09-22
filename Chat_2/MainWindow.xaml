@@ -337,11 +337,12 @@
             </Grid.RowDefinitions>
 
             <!--#region 个人资料 按钮-->
-            <uc:UCRoundProfileButton Width="50" ProfileImageSource="/assets/user-10.png" UserName="dp one" Availability="availability" />
+            <uc:UCRoundProfileButton Width="50" ProfileImageSource="/assets/user-10.png" UserName="dp one" Availability="availability" IsOnline="True"/>
             <!--#endregion-->
             <uc:UCMenuListControl Grid.Row="1" Margin="0,50,0,0" />
         </Grid>
 
+        <!--信息区域-->
         <StackPanel Grid.Column="1" Margin="0,30,0,0">
             <Grid Margin="30,0,30,0">
                 <Grid.ColumnDefinitions>
@@ -432,5 +433,60 @@
             <uc:UCChatList />
 
         </StackPanel>
+
+        <!--聊天区域-->
+        <Border Grid.Column="2" BorderThickness=".5,0" BorderBrush="#FFB7B5B8" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="160" />
+                    </Grid.ColumnDefinitions>
+
+                    <uc:UCRoundProfileButton Grid.Column="0" HorizontalAlignment="Left" Margin="30,0" ProfileImageSource="/assets/user-1.png" IsOnline="True" />
+                    <TextBlock Grid.Column="1"  VerticalAlignment="Center">
+                        <Run Text="Tobias Williams" FontWeight="Bold" FontSize="17" />
+                        <LineBreak />
+                        <Run Text="Online" FontSize="14" Foreground="#FFB7B5B8" />
+                        <Run Text=" • " FontWeight="ExtraBold" FontSize="19" Foreground="#FFB7B5B8" />
+                        <Run Text="Last seen 3 hours ago" FontSize="14" Foreground="#FFB7B5B8" />
+                    </TextBlock>
+
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <UniformGrid  Columns="3" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="14,30,14,0" >
+                            <Image Height="20" Stretch="Uniform" Source="/assets/phone.png" />
+                            <Image Height="20" Stretch="Uniform" Source="/assets/videocall.png" />
+                            <Image Height="20" Stretch="Uniform" Source="/assets/more.png" />
+                        </UniformGrid>
+                    </Grid>
+                </Grid>
+
+                <uc:UCConversation Grid.Row="1" BorderBrush="#B7B5B8" />
+
+                <Grid Grid.Row="2" Background="White">
+                    <Border Background="Transparent" Visibility="{Binding Visibility}" Margin="30,0,30,0">
+                        <Grid>
+                            <Border Background="#F8F6F7" Height="48" CornerRadius="25" HorizontalAlignment="Stretch">
+                                <Grid Height="Auto">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

@@ -8,11 +8,13 @@
              x:Name="_profileButton" Height="Auto" Width="Auto">
 
     <UserControl.Resources>
-        <BitmapImage x:Key="DefaultImage" UriSource="/assets/noimageerror.png" />
+        <!--<BitmapImage x:Key="DefaultImage" UriSource="pack://application:,,,/assets/noimageerror.png" />-->
+        <BitmapImage x:Key="DefaultImage" UriSource="pack://application:,,,/Chat_2;component/assets/noimageerror.png" />
 
         <Style x:Key="AvailabilityStyle" TargetType="{x:Type Ellipse}">
             <Setter Property="StrokeThickness" Value="3" />
-            <Setter Property="Stroke" Value="{Binding ElementName=_profileButton,Path=StrokeBrush,FallbackValue=White,TargetNullValue=White}" />
+            <!--<Setter Property="Stroke" Value="{Binding ElementName=_profileButton,Path=StrokeBrush,FallbackValue=White,TargetNullValue=White}" />-->
+            <Setter Property="Stroke" Value="White" />
             <Setter Property="Width" Value="15" />
             <Setter Property="Height" Value="15" />
             <Setter Property="HorizontalAlignment" Value="Left" />
@@ -23,6 +25,7 @@
                     <Setter Property="Fill" Value="#FFB7B5B8" />
                 </DataTrigger>
             </Style.Triggers>
+            
         </Style>
     </UserControl.Resources>
 

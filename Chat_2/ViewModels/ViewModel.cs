@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace Chat_2.ViewModels
@@ -64,7 +65,8 @@ namespace Chat_2.ViewModels
                         ContactProfilePic="/assets/user-1.png",
                         ContactName="用户04",
                         LastMessageTime="2020-09-16",
-                        Availability="Offline",
+                        Availability="Online",
+                        IsOnline=true,
                         IsRead=true,
                         Message="下线咯.人呢？"
                     },
@@ -92,6 +94,42 @@ namespace Chat_2.ViewModels
                 };
             }
         }
+
+        public List<ConversationMessages> Messages
+        {
+            get
+            {
+                return new List<ConversationMessages>
+                {
+                    new ConversationMessages()
+                    {
+                        IsAudioTrack=Visibility.Collapsed,
+                        Message="Hi Alex! What's Up?",
+                        MessageStatus="Received",
+                        TimeStamp="昨天 下午14：26"
+                    },
+                          new ConversationMessages()
+                    {
+                          IsAudioTrack=Visibility.Collapsed,
+                          Message="Hi Alex! What's Up?",
+                          MessageStatus="Received",
+                          TimeStamp="昨天 下午14：26"
+                    },
+                    new ConversationMessages()
+                    {
+                        IsAudioTrack=Visibility.Collapsed,Message="Hi Alex! What's Up?",MessageStatus="Received",TimeStamp="昨天 下午14：26"
+                    },
+                    new ConversationMessages()
+                    {
+                        IsAudioTrack=Visibility.Collapsed,Message="Hi Alex! What's Up?",MessageStatus="Received",TimeStamp="昨天 下午14：26"
+                    },
+                     new ConversationMessages()
+                    {
+                        IsAudioTrack=Visibility.Collapsed,Message="Hi Alex! What's Up?",MessageStatus="Received",TimeStamp="昨天 下午14：26"
+                    },
+                };
+            }
+        }
     }
 
     public class MenuItems
@@ -108,14 +146,22 @@ namespace Chat_2.ViewModels
 
         public string ContactProfilePic { get; set; }
 
-        public bool IsOnline { get; set; } 
+        public bool IsOnline { get; set; }
         public string ContactName { get; set; }
-        
+
         public string LastMessageTime { get; set; }
         public string Availability { get; set; }
         public bool IsRead { get; set; }
         public string Message { get; set; }
         public int NewMsgCount { get; set; }
+    }
+
+    public class ConversationMessages
+    {
+        public string MessageStatus { get; set; }
+        public string TimeStamp { get; set; }
+        public string Message { get; set; }
+        public Visibility IsAudioTrack { get; set; }
     }
 }
 
