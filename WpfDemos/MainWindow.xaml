@@ -5,17 +5,167 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemos"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+         xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
         Height="600" Width="1000" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF3A3A3A">
     <Grid>
         <TabControl>
             <TabItem Header="树视图" >
                 <TreeView>
-                    
+
                 </TreeView>
             </TabItem>
-            <TabItem Header="进度条" Style="{StaticResource TabItemStyle}" >
-                <ProgressBar Height="15" Width="150" Value="40" Margin="10" />
+            <TabItem Header="进度条" Style="{StaticResource TabItemStyle}" Height="30" VerticalAlignment="Bottom" >
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="Auto"/>
+                        <ColumnDefinition  Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ProgressBar Height="15" Width="150" Value="40" Margin="10" />
+                    <ProgressBar  Style="{StaticResource MaterialDesignCircularProgressBar}" Value="20" IsIndeterminate="True"  x:Name="IndeterminateToDeterminateCircularProgress" />
+                </Grid>
+
+
+            </TabItem>
+            <TabItem Header="自动换行？">
+                
+                <WrapPanel Orientation="Horizontal" ItemHeight="Auto">
+
+
+
+                    <Button>按钮111111111</Button>
+                    <Button>按钮1222222222222222222222222</Button>
+                    <Button>按钮133333333</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1333333333333</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+                    <Button>按钮1</Button>
+
+                    <StackPanel>
+                        <materialDesign:Chip
+  Content="Example Chip"
+  IsDeletable="True"
+  ToolTip="This is an example chip"></materialDesign:Chip>
+                    </StackPanel>
+                </WrapPanel>
+               
+            </TabItem>
+            <TabItem Header="菜单" Height="30" VerticalAlignment="Top">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="90" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0">
+                        <materialDesign:ColorZone Mode="PrimaryMid"
+  Padding="16">
+                            <DockPanel>
+                                <materialDesign:PopupBox
+      DockPanel.Dock="Right"
+      PlacementMode="BottomAndAlignRightEdges">
+                                    <ListBox>
+                                        <ListBoxItem>
+                                            Hello World搜索
+                                        </ListBoxItem>
+                                        <ListBoxItem>
+                                            Nice Popup
+                                        </ListBoxItem>
+                                        <ListBoxItem>
+                                            Goodbye.
+                                        </ListBoxItem>
+                                        <ListBoxItem>
+
+                                            <Button
+    Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
+    materialDesign:DialogHost.DialogClosingAttached="Sample2_DialogHost_OnDialogClosing"
+    Width="128">
+                                                <Button.CommandParameter>
+                                                    <StackPanel
+        Margin="16">
+                                                        <ProgressBar
+          Style="{DynamicResource MaterialDesignCircularProgressBar}"
+          HorizontalAlignment="Center"
+          Margin="16"
+          IsIndeterminate="True"
+          Value="0" />
+                                                        <Button
+          Style="{StaticResource MaterialDesignFlatButton}"
+          IsCancel="True"
+          Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+          CommandParameter="Sample2Cancel"
+          HorizontalAlignment="Center">
+                                                            CANCEL
+                                                        </Button>
+                                                    </StackPanel>
+                                                </Button.CommandParameter>
+                                                退出系统
+                                            </Button>
+
+                                        </ListBoxItem>
+                                    </ListBox>
+                                </materialDesign:PopupBox>
+                                <StackPanel
+      Orientation="Horizontal">
+                                    <ToggleButton
+        Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                                    <TextBlock
+        VerticalAlignment="Center"
+        Margin="16 0 0 0">
+      Material Design In XAML Toolkit
+                                    </TextBlock>
+                                </StackPanel>
+                            </DockPanel>
+                        </materialDesign:ColorZone>
+                    </DockPanel>
+
+                    <StackPanel Grid.Row="1">
+                      
+                        <materialDesign:DialogHost IsOpen="True">
+                            <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" />
+                            <materialDesign:DialogHost.DialogContent>
+                                LOL这事唐楚科
+                            </materialDesign:DialogHost.DialogContent>
+                        </materialDesign:DialogHost>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2">
+                            <Button
+    Command="{Binding RunDialogCommand}"
+    Width="128">
+                                RUN CODE
+                            </Button>
+                            <Button
+    Command="{Binding RunExtendedDialogCommand}"
+    Width="128"
+    Margin="0 32 0 0">
+                                EXTENDED
+                            </Button>
+                        </StackPanel>
+
+                    <StackPanel Grid.Row="3">
+                    <Line X1="0" Y1="0" X2="1000" Y2="0" StrokeDashArray="01" Stroke="DarkGray" StrokeThickness="15" />
+
+                    <Path Data="M 200,300 A 100,100 0 1 1 300,299 Z" Stroke="Black" StrokeDashArray="2" StrokeThickness="5" Stretch="Fill" Width="150" Height="138"/>
+                    </StackPanel>
+                </Grid>
+                
+              
             </TabItem>
         </TabControl>
     </Grid>
