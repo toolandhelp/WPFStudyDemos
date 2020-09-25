@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
         xmlns:uc="clr-namespace:Demo.UserControls"
-        Title="MainWindow" Height="800" Width="1024" MinWidth="560">
+        Title="MainWindow" Height="800" Width="1024" MinWidth="1024">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,13 +19,13 @@
         <Grid Grid.Row="0">
             <uc:NavListControl />
         </Grid>
-        <Grid Grid.Row="2">
-            <ListView>
+        <Grid Grid.Row="1">
+            <!--<ListView>
                 <ListViewItem Content="01" />
                 <ListViewItem Content="01" />
                 <ListViewItem Content="01" />
-            </ListView>
-
+            </ListView>-->
+            <uc:NavAttributesControl />
 
         </Grid>
         <StackPanel Grid.Row="3">
