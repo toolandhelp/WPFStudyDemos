@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo.UserControls"
              mc:Ignorable="d" 
-              x:Name="_navList"
+             x:Name="_navList"
              Height="Auto" Width="Auto">
     <UserControl.Resources>
 
@@ -48,11 +48,12 @@
             <Setter Property="Height" Value="80"/>
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Background" Value="White" />
-            <Setter Property="Margin" Value="10,0,10,0" />
+            <Setter Property="Margin" Value="20,0,25,0" />
             <Setter Property="SelectionMode" Value="Single" />
             <Setter Property="Focusable" Value="False"/>
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
             <Setter Property="ItemsPanel">
                 <Setter.Value>
                     <ItemsPanelTemplate>

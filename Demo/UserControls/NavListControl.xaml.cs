@@ -54,20 +54,21 @@ namespace Demo.UserControls
                  new TopMenuModel
                  {
                      MenuName=" 平 面 ",
-                     PartitionVisibility= Visibility.Hidden
+                      //PartitionVisibility= Visibility.Hidden
                  },
-                 //new TopMenuModel
-                 //{
-                 //    MenuName=" 文 本 "
-                 //},
-                 //new TopMenuModel
-                 //{
-                 //    MenuName="建筑规范"
-                 //},
-                 //new TopMenuModel
-                 //{
-                 //    MenuName="新 楼 盘"
-                 //}
+                 new TopMenuModel
+                 {
+                     MenuName=" 文 本 "
+                 },
+                 new TopMenuModel
+                 {
+                     MenuName="建筑规范"
+                 },
+                 new TopMenuModel
+                 {
+                     MenuName="新 楼 盘",
+                     PartitionVisibility= Visibility.Hidden
+                 }
             };
             DataContext = _task;
         }

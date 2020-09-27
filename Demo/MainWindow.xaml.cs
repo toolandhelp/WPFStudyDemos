@@ -126,4 +126,18 @@ namespace Demo
 
     }
 
+
+   
+    //类型名称
+    public class AttrType
+    {
+        public string AttrTypeName { get; set; }
+        public List<ChildAttrName> ChildAttrs { get; set; }
+    }
+
+    //类型名称子属性
+    public class ChildAttrName
+    {
+        public string AttrName { get; set; }
+    }
 }

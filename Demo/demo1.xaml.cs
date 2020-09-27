@@ -9,23 +9,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo.UserControls
+namespace Demo
 {
     /// <summary>
-    /// NavAttributesControl.xaml 的交互逻辑
+    /// demo1.xaml 的交互逻辑
     /// </summary>
-    public partial class NavAttributesControl : UserControl
+    public partial class demo1 : Window
     {
         ObservableCollection<AttrType> _task = null;
-
-        public NavAttributesControl()
+        public demo1()
         {
             InitializeComponent();
-
-          //  LoadData();
+            // LoadData();
 
             _task = new ObservableCollection<AttrType>()
             {
@@ -100,10 +97,10 @@ namespace Demo.UserControls
             List<GradeItemModel> listBoxItems = new List<GradeItemModel>();
 
             List<StudentModel> items = new List<StudentModel>();
-            items.Add(new StudentModel() { Name = "小明" });
-            items.Add(new StudentModel() { Name = "小花" });
-            items.Add(new StudentModel() { Name = "小米" });
-            listBoxItems.Add(new GradeItemModel() {  GradeName = "一班", StudentItems = items });
+            items.Add(new StudentModel() { Name = "小明"});
+            items.Add(new StudentModel() { Name = "小花"});
+            items.Add(new StudentModel() { Name = "小米"});
+            listBoxItems.Add(new GradeItemModel() { GradeName = "一班", StudentItems = items });
 
             List<StudentModel> items1 = new List<StudentModel>();
             items1.Add(new StudentModel() { Name = "小一" });
@@ -114,11 +111,10 @@ namespace Demo.UserControls
             items1.Add(new StudentModel() { Name = "小三" });
             items1.Add(new StudentModel() { Name = "小三" });
             items1.Add(new StudentModel() { Name = "小三" });
-            listBoxItems.Add(new GradeItemModel() { GradeName = "二班", StudentItems = items1 });
+            listBoxItems.Add(new GradeItemModel() { GradeName = "二班 ：", StudentItems = items1 });
 
-
-            DataContext = listBoxItems;
-            //listbox.ItemsSource = listBoxItems;
+            listbox.ItemsSource = listBoxItems;
+            //  listbox3.ItemsSource = listBoxItems;
         }
     }
 }
