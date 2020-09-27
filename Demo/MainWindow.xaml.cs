@@ -122,6 +122,8 @@ namespace Demo
 
         public string Icon { get; set; }
 
+        public Visibility PartitionVisibility { get; set; } = Visibility.Visible;
+
     }
 
 }
