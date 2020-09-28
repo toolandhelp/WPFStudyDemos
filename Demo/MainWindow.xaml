@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
         xmlns:uc="clr-namespace:Demo.UserControls"
-        Title="MainWindow" Height="1000" Width="1024" MinWidth="1024">
+        Title="MainWindow" Height="1000" Width="1024" MinWidth="1024" Background="GhostWhite">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,22 +15,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0">
-            <uc:NavListControl />
-        </Grid>
-        <Grid Grid.Row="1">
-            <!--<ListView>
-                <ListViewItem Content="01" />
-                <ListViewItem Content="01" />
-                <ListViewItem Content="01" />
-            </ListView>-->
-            <uc:NavAttributesControl />
-
-        </Grid>
-        <uc:SortUserControl Grid.Row="2" Margin="35,20" />
-        <StackPanel Grid.Row="3" Margin="35,0">
-         
-        </StackPanel>
+        
+        <uc:NavListControl  Grid.Row="0" />
+        <uc:NavAttributesControl Grid.Row="1" />
+        <uc:SortUserControl Grid.Row="2" Margin="35,20,0,0" />
+        <uc:CenterListUserControl Grid.Row="3" Margin="35,5"/>
     </Grid>
 </Window>
