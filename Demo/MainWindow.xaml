@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
         xmlns:uc="clr-namespace:Demo.UserControls"
-        Title="MainWindow" Height="800" Width="1024" MinWidth="1024">
+        Title="MainWindow" Height="1000" Width="1024" MinWidth="1024">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -28,63 +28,9 @@
             <uc:NavAttributesControl />
 
         </Grid>
-        <StackPanel Grid.Row="3">
-            <Polygon Points="0,25,300,25 145,0" Width="50" Stretch="Fill" Fill="Black" />
-            <Line X1="0" Y1="0" X2="10000" Y2="0" StrokeDashArray="01" Stroke="DarkGray" StrokeThickness="15" SnapsToDevicePixels="True"  />
-            <uc:SelectedAttrControl />
-
-            <!--<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal"></WrapPanel>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-                <ListViewItem Content="按钮1" />
-
-            </ListView>-->
+        <uc:SortUserControl Grid.Row="2" Margin="35,20" />
+        <StackPanel Grid.Row="3" Margin="35,0">
+         
         </StackPanel>
     </Grid>
 </Window>
