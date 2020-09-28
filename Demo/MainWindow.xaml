@@ -31,7 +31,7 @@
         <StackPanel Grid.Row="3">
             <Polygon Points="0,25,300,25 145,0" Width="50" Stretch="Fill" Fill="Black" />
             <Line X1="0" Y1="0" X2="10000" Y2="0" StrokeDashArray="01" Stroke="DarkGray" StrokeThickness="15" SnapsToDevicePixels="True"  />
-
+            <uc:SelectedAttrControl />
 
             <!--<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListView.ItemsPanel>

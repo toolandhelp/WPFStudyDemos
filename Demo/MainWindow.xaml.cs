@@ -122,7 +122,10 @@ namespace Demo
 
         public string Icon { get; set; }
 
+        public bool IsItemSelected { get; set; } = false;
+
         public Visibility PartitionVisibility { get; set; } = Visibility.Visible;
+        
 
     }
 
@@ -133,6 +136,7 @@ namespace Demo
     {
         public string AttrTypeName { get; set; }
         public List<ChildAttrName> ChildAttrs { get; set; }
+        public Visibility Visibility { get; set; } = Visibility.Visible;
     }
 
     //类型名称子属性

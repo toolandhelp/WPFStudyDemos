@@ -9,35 +9,128 @@
              MinWidth="1000" Height="Auto">
 
     <UserControl.Resources>
+
+        <!--按钮选中-->
+        <Style x:Key="ListViewItemStyle" TargetType="ListViewItem">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="Border"
+                                Padding="2"
+                                SnapsToDevicePixels="true"
+                                Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" >
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+                                                                     Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+                                                                     Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SelectedUnfocused">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+                                                                     Value="Transparent" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         
+        <!--按钮-->
+        <Style x:Key="AttrBtn" TargetType="{x:Type TextBlock}" >
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Focusable" Value="True"/>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsMouseOver,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBoxItem}}" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsSelected,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBoxItem}}" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ListViewStyle" TargetType="{x:Type ListView}">
+            <Setter Property="Margin" Value="5,0,5,5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        
+        
+        <!--边框-->
         <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
-            <Setter Property="Margin" Value="50,-9"/>
+            <Setter Property="Margin" Value="40,-10"/>
+            <Setter Property="Padding" Value="5,0"/>
             <Setter Property="CornerRadius" Value="5" />
             <Setter Property="BorderThickness" Value="3" />
             <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
             <!--<Setter Property="Height" Value="Auto" />-->
         </Style>
 
+        <!--选中属性列表-->
+        <Style x:Key="SelectAttrListBox" TargetType="{x:Type ListBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+      
+        
         <!--数据列表-->
-        <Style x:Key="AttrListBox" TargetType="{x:Type ItemsControl}">
+        <Style x:Key="AttrListBox" TargetType="{x:Type ListBox}">
             <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="BorderThickness" Value="0" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         </Style>
         <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Height" Value="Auto"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Background" Value="Transparent"/>
-
+            <Setter Property="BorderThickness" Value="0"/>
+            
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                        <!--<TextBlock Grid.Row="0" Grid.Column="0" Margin="5,10"  Text="{Binding AttrTypeName}"  FontSize="15" FontWeight="DemiBold" />-->
-                        <Border SnapsToDevicePixels="True">
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
-                                    <RowDefinition Height="3"/>
+                                    <RowDefinition Height="5"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
@@ -45,23 +138,21 @@
                                     <ColumnDefinition Width="60" />
                                 </Grid.ColumnDefinitions>
 
-
                                 <!--属性名称-->
-                                <TextBlock Text="{Binding AttrTypeName}" Grid.Row="0" Grid.Column="0" Margin="5,10" FontSize="15" FontWeight="DemiBold" />
-
-
+                                <TextBlock Text="{Binding AttrTypeName}" Grid.Row="0" Grid.Column="0" Margin="15,10" FontSize="16" FontWeight="DemiBold" />
+                                
                                 <!--子属性-->
-                                <ListView Grid.Row="0" Grid.Column="1" Margin="10,3" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0" ItemsSource="{Binding ChildAttrs}">
+                                <ListView Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ChildAttrs}" Style="{DynamicResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemStyle}" >
                                     <ListView.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                            <WrapPanel Orientation="Horizontal" />
                                         </ItemsPanelTemplate>
                                     </ListView.ItemsPanel>
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <Grid>
-                                                <Border>
-                                                    <TextBlock Text="{Binding Path=AttrName}" />
+                                                <Border BorderThickness="0" Background="Transparent">
+                                                    <TextBlock Text="{Binding Path=AttrName}" Style="{StaticResource AttrBtn}" />
                                                 </Border>
                                             </Grid>
                                         </DataTemplate>
@@ -71,11 +162,11 @@
 
                                 <!--展开按钮-->
 
-                                <TextBlock Grid.Row="0" Grid.Column="2" Text="上下" />
+                                <TextBlock Grid.Row="0" Grid.Column="2" Text="上下" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,30,0" />
 
                                 <!--虚线-->
 
-                                <Line Grid.Row="1" Grid.ColumnSpan="3" X1="0" Y1="0" X2="2500" Y2="0" StrokeDashArray="01" Stroke="DarkGray" StrokeThickness="15" Margin="10,0" Visibility="Visible" />
+                                <Line Grid.Row="1" Grid.ColumnSpan="3" X1="0" Y1="0" X2="1770" Y2="0" StrokeDashArray="05" Stroke="DarkGray" StrokeThickness="1" Margin="20,0" Visibility="{Binding Visibility}" />
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -84,7 +175,19 @@
         </Style>
     </UserControl.Resources>
 
-    <Border Style="{StaticResource BorderStyle}" >
-        <ItemsControl Style="{StaticResource AttrListBox}" ItemsSource="{Binding .}"/>
+    <Border Style="{DynamicResource BorderStyle}" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text=" 档 案 库 "  FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray" />
+            <local:SelectedAttrControl Grid.Row="0" Grid.Column="1"/>
+            <ListBox Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource AttrListBox}" ItemsSource="{Binding .}"/>
+        </Grid>
     </Border>
 </UserControl>

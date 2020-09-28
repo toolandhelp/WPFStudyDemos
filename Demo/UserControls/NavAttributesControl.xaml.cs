@@ -25,13 +25,13 @@ namespace Demo.UserControls
         {
             InitializeComponent();
 
-          //  LoadData();
+            //  LoadData();
 
             _task = new ObservableCollection<AttrType>()
             {
                  new AttrType
                     {
-                        AttrTypeName="类型",
+                        AttrTypeName=" 类 型 ：",
                         ChildAttrs = new List<ChildAttrName>
                         {
                             new ChildAttrName
@@ -70,26 +70,114 @@ namespace Demo.UserControls
                             }, new ChildAttrName
                             {
                                 AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
+                            }, new ChildAttrName
+                            {
+                                AttrName="按钮1"
                             }
                         }
-                    },
-                 new AttrType
-                 {
-                     AttrTypeName="类型2",
-                     ChildAttrs = new List<ChildAttrName>
+                     },
+                     new AttrType
                      {
-                         new ChildAttrName
+                         AttrTypeName=" 类 型 ：",
+                         ChildAttrs = new List<ChildAttrName>
                          {
-                             AttrName="按钮1"
-                         }, new ChildAttrName
+                             new ChildAttrName
+                             {
+                                 AttrName="按钮1"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮2"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }
+                         },
+                        // Visibility=Visibility.Hidden
+                     },
+                     new AttrType
+                     {
+                         AttrTypeName=" 类 型 ：",
+                         ChildAttrs = new List<ChildAttrName>
                          {
-                             AttrName="按钮2"
-                         }, new ChildAttrName
+                             new ChildAttrName
+                             {
+                                 AttrName="按钮1"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮2"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }
+                         },
+                        // Visibility=Visibility.Hidden
+                     },
+                     new AttrType
+                     {
+                         AttrTypeName=" 类 型 ：",
+                         ChildAttrs = new List<ChildAttrName>
                          {
-                             AttrName="按钮3"
-                         }
+                             new ChildAttrName
+                             {
+                                 AttrName="按钮1"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮2"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }, new ChildAttrName
+                             {
+                                 AttrName="按钮3"
+                             }
+                         },
+                        Visibility=Visibility.Hidden
                      }
-                 }
             };
             DataContext = _task;
         }
@@ -103,7 +191,7 @@ namespace Demo.UserControls
             items.Add(new StudentModel() { Name = "小明" });
             items.Add(new StudentModel() { Name = "小花" });
             items.Add(new StudentModel() { Name = "小米" });
-            listBoxItems.Add(new GradeItemModel() {  GradeName = "一班", StudentItems = items });
+            listBoxItems.Add(new GradeItemModel() { GradeName = "一班", StudentItems = items });
 
             List<StudentModel> items1 = new List<StudentModel>();
             items1.Add(new StudentModel() { Name = "小一" });

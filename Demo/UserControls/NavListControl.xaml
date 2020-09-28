@@ -11,7 +11,7 @@
 
         <!--导航按钮-->
         <Style x:Key="TextBtn" TargetType="{x:Type TextBlock}" >
-            <Setter Property="Margin" Value="10" />
+            <Setter Property="Margin" Value="10,2" />
             <Setter Property="Focusable" Value="True"/>
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Style.Triggers>
@@ -87,7 +87,7 @@
                                     <!--<Path Data="{Binding Icon}" Height="35" Width="35" Fill="Black" Stretch="Fill"/>-->
                                     <Polygon Style="{StaticResource IndicatorStyle}" />
                                 </StackPanel>
-                                <Border Grid.Column="1" Background="LightGray" Height="15"  Focusable="False" Margin="0,-10,0,0" Visibility="{Binding PartitionVisibility}" />
+                                <Border Grid.Column="1" Background="LightGray" Height="15"  Focusable="False" Margin="0,-20,0,0" Visibility="{Binding PartitionVisibility}" />
                             </Grid>
                         </Border>
                     </ControlTemplate>
