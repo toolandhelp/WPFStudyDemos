@@ -23,24 +23,27 @@
         </Style>
 
         <Style x:Key="ItemBorder" TargetType="{x:Type Border}">
+            <Setter Property="ClipToBounds" Value="True"/>
             <Setter Property="Width" Value="280"/>
             <Setter Property="Height" Value="250"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="CornerRadius" Value="15"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Border.Effect">
+            <!--<Setter Property="Border.Effect">
                 <Setter.Value>
-                    <DropShadowEffect x:Name="ItemBorderEffect" Color="#FFBBBBBB" Direction="0" BlurRadius="10" Opacity="0.5" RenderingBias="Quality" ShadowDepth="0" />
+                    <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" Opacity="100" RenderingBias="Quality" ShadowDepth="1"  />
                 </Setter.Value>
-            </Setter>
+            </Setter>-->
 
-            <Style.Triggers>
+            <!--<Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBoxItem}}" Value="True">
-                    <!--<Setter Property="ShadowDepth" Value="2" TargetName="ItemBorderEffect" />-->
-
-
+                    <Setter Property="Border.Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="10" Opacity="0.5" RenderingBias="Quality" ShadowDepth="2" />
+                        </Setter.Value>
+                    </Setter>
                 </DataTrigger>
-            </Style.Triggers>
+            </Style.Triggers>-->
 
         </Style>
 
@@ -84,7 +87,6 @@
                                             </StackPanel>
 
                                         </Grid>
-
                                     </StackPanel>
                                 </StackPanel>
                                 <!--<StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,20">
@@ -116,8 +118,8 @@
                     <Setter Property="Opacity" Value="0.8"/>
                     <Setter Property="RenderTransform">
                         <Setter.Value>
-                            <MatrixTransform Matrix="1.2 0 0 1.2 -30 -15"></MatrixTransform>
-                            <!--<ScaleTransform  ScaleX="1.2" ScaleY="1.2"/>-->
+                            <!--<MatrixTransform Matrix="1.2 0 0 1.2 -30 -15"></MatrixTransform>-->
+                            <ScaleTransform  CenterX="150" CenterY="150" ScaleX="1.2" ScaleY="1.2"/>
                         </Setter.Value>
                     </Setter>
                 </Trigger>
@@ -161,8 +163,8 @@
 
                                             <StackPanel Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
                                                 <!--<Image Source="/assets/star.png" Width="14"/>-->
-                                                <TextBlock Text="☆" Foreground="White" VerticalAlignment="Center" FontSize="16" />
-                                                <TextBlock Text="收藏" Foreground="White" VerticalAlignment="Center" FontSize="12" Margin="3" />
+                                                <TextBlock Text="☆" Foreground="{Binding IsFavorites}" VerticalAlignment="Center" FontSize="16" />
+                                                <TextBlock Text="收藏" Foreground="{Binding IsFavorites}" VerticalAlignment="Center" FontSize="12" Margin="3" />
                                             </StackPanel>
                                         </Grid>
                                     </StackPanel>
@@ -182,6 +184,11 @@
                                             </StackPanel.ToolTip>
                                         </StackPanel>
                                     </StackPanel>
+                                    
+                                    <!--加上黑影边框-->
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" Opacity="100" RenderingBias="Quality" ShadowDepth="1"  />
+                                    </Border.Effect>
                                 </Border>
                             </Grid>
                         </Border>

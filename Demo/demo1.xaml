@@ -145,6 +145,28 @@
             </Style.Triggers>
 
         </Style>
+
+        <Style x:Key="ImgTest" TargetType="{x:Type Image}">
+            <Setter Property="Source" Value="/assets/item-1.jpg" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Stretch" Value="Fill" />
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.8"/>
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <!--<MatrixTransform Matrix="1.2 0 0 1.2 -30 -15"></MatrixTransform>-->
+                            <ScaleTransform  CenterX="50" CenterY="50"  ScaleX="1.2" ScaleY="1.2" />
+
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+        
     </Window.Resources>
 
     <Grid>
@@ -170,15 +192,16 @@
 
         <uc:NavAttributesControl Grid.Row="1" Grid.Column="1"  Margin="0,20"/>
         <StackPanel Grid.Row="2">
-            <Image Source="/assets/item-1.jpg" Height="100" Width="100" Stretch="Fill"
-                    Margin="10"></Image>
-            <Image Source="/assets/item-1.jpg" Height="100" Width="100" Stretch="Fill"
+            <Border BorderBrush="Black" BorderThickness="1" ClipToBounds="True">
+                <Image Style="{StaticResource ImgTest}"/>
+            </Border>
+            <!--<Image Source="/assets/item-1.jpg" Height="100" Width="100" Stretch="Fill"
                     Margin="10">
                 <Image.RenderTransform>
-                    <!--放大1.5倍-->
+                    --><!--放大1.5倍--><!--
                     <MatrixTransform Matrix="2 0 0 2 -50 0"></MatrixTransform>
                 </Image.RenderTransform>
-            </Image>
+            </Image>-->
 
             <Button Content="Test1"></Button>
         </StackPanel>

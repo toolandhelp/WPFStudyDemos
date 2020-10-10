@@ -31,8 +31,7 @@
                                             <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                                           Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
-                                                <EasingColorKeyFrame KeyTime="0"
-                                                                     Value="Transparent" />
+                                                <EasingColorKeyFrame KeyTime="0" Value="Transparent" />
                                             </ColorAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -71,7 +70,7 @@
         
         <!--按钮-->
         <Style x:Key="AttrBtn" TargetType="{x:Type TextBlock}" >
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Margin" Value="7"/>
             <Setter Property="Focusable" Value="True"/>
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Style.Triggers>
@@ -167,7 +166,7 @@
 
                                 <!--虚线-->
 
-                                <Line Grid.Row="1" Grid.ColumnSpan="3" X1="0" Y1="0" X2="1770" Y2="0" StrokeDashArray="05" Stroke="DarkGray" StrokeThickness="1" Margin="20,0" Visibility="{Binding Visibility}" />
+                                <Line Grid.Row="1" Grid.ColumnSpan="3" X1="0" Y1="0" X2="{Binding LineWidth}" Y2="0" StrokeDashArray="05" Stroke="DarkGray" StrokeThickness="1" Margin="20,0" Visibility="{Binding Visibility}" />
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -176,7 +175,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Border Style="{DynamicResource BorderStyle}" >
+    <Border Name="BlackBorder" Style="{DynamicResource BorderStyle}" >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />

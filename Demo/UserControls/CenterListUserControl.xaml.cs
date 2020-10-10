@@ -22,6 +22,9 @@ namespace Demo.UserControls
         ObservableCollection<CententModel> _task = null;
         public CenterListUserControl()
         {
+            TextBlock textBlock = new TextBlock();
+            textBlock.Foreground = Brushes.Red;
+
             InitializeComponent();
 
             _task = new ObservableCollection<CententModel>
@@ -30,7 +33,7 @@ namespace Demo.UserControls
                 {
                     ProfileName="张大姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
+                    IsFavorites=Brushes.Red,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -46,7 +49,7 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
+                    IsFavorites=Brushes.Red,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -54,7 +57,7 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
+                    IsFavorites=Brushes.Red,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -62,7 +65,6 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -70,7 +72,6 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -78,7 +79,7 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
+                    IsFavorites=Brushes.Red,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -86,7 +87,6 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -94,7 +94,6 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -102,7 +101,6 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
@@ -110,10 +108,95 @@ namespace Demo.UserControls
                 {
                     ProfileName="张3姐",
                     ProfilePictureImageUrl="/assets/user-1.png",
-                    IsFavorites=true,
+                    IsFavorites=Brushes.Red,
                     Title="广东设计示范区",
                     View=599,
                     ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=Brushes.Red,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg",
+                    Items=80,
+                    Fans="90",
                 },
             };
 
@@ -138,7 +221,7 @@ namespace Demo.UserControls
         /// <summary>
         /// 收藏
         /// </summary>
-        public bool IsFavorites { get; set; } = false;
+        public Brush IsFavorites { get; set; } = Brushes.White;
         /// <summary>
         /// 用户头像图片路径
         /// </summary>

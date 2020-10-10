@@ -27,6 +27,11 @@ namespace Demo.UserControls
 
             //  LoadData();
 
+            //  var lineWidth = BlackBorder.Width;
+            //  var lineWidth = SystemParameters.WorkArea.Width;
+            //  var lineWidth = SystemParameters.PrimaryScreenWidth;
+            var lineWidth = this.Width-260;
+
             _task = new ObservableCollection<AttrType>()
             {
                  new AttrType
@@ -107,7 +112,8 @@ namespace Demo.UserControls
                             {
                                 AttrName="按钮1"
                             }
-                        }
+                        },
+                        LineWidth=lineWidth
                      },
                      new AttrType
                      {
@@ -126,6 +132,7 @@ namespace Demo.UserControls
                              }
                          },
                         // Visibility=Visibility.Hidden
+                        LineWidth=lineWidth
                      },
                      new AttrType
                      {
@@ -144,6 +151,7 @@ namespace Demo.UserControls
                              }
                          },
                         // Visibility=Visibility.Hidden
+                        LineWidth=lineWidth
                      },
                      new AttrType
                      {
@@ -176,7 +184,8 @@ namespace Demo.UserControls
                                  AttrName="按钮3"
                              }
                          },
-                        Visibility=Visibility.Hidden
+                        Visibility=Visibility.Hidden,
+                        LineWidth=lineWidth
                      }
             };
             DataContext = _task;

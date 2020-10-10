@@ -137,6 +137,9 @@ namespace Demo
         public string AttrTypeName { get; set; }
         public List<ChildAttrName> ChildAttrs { get; set; }
         public Visibility Visibility { get; set; } = Visibility.Visible;
+
+        //线长
+        public double LineWidth { get; set; }
     }
 
     //类型名称子属性
