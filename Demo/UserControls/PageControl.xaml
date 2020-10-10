@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Demo.UserControls.PageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo.UserControls"
+             mc:Ignorable="d" 
+             x:Name="_page"
+             Height="Auto" Width="Auto" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="15,5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!--Visibility="Collapsed"-->
+            <Image Source="/assets/load.gif" Stretch="UniformToFill" Height="30" Width="30" />
+            <TextBlock Text="加载中" VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="15,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button>上一页</Button>
+            <Button>1</Button>
+            <Button>2</Button>
+            <Button>3</Button>
+            <Button>4</Button>
+            <Button>4</Button>
+            <Button>…</Button>
+            <Button>99</Button>
+            <Button>下一页</Button>
+            <TextBlock>共99页 跳至</TextBlock>
+            <TextBox>5</TextBox>
+            <TextBlock>页</TextBlock>
+            <Button>确认</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

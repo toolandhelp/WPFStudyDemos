@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Demo.UserControls.UserInfoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo.UserControls"
+             mc:Ignorable="d" 
+             x:Name="_userInfo"
+             Height="Auto" Width="Auto" Background="White">
+
+    <Border CornerRadius="5" Padding="5,0">
+        <Grid Width="200">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="50" Margin="0,20,0,5" BorderThickness="0" Width="100" Height="100" HorizontalAlignment="Center">
+                <Border.Background>
+                    <ImageBrush ImageSource="/assets/item-1.jpg" />
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                <TextBlock Text="尼古拉斯凯奇" FontSize="18" />
+                <StackPanel>
+                    <TextBlock Text="项目" />
+                    <TextBlock Text="项目" />
+                    <TextBlock Text="项目" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,20">
+                <Button Margin="10,5">关注</Button>
+                <Button Margin="10,5">私信</Button>
+            </StackPanel>
+        </Grid>
+        <!--<Border.Effect>
+            <DropShadowEffect Color="#FFBBBBBB" Direction="270" BlurRadius="10" Opacity="180" RenderingBias="Quality" ShadowDepth="4"  />
+        </Border.Effect>-->
+    </Border>
+</UserControl>

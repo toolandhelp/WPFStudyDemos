@@ -14,6 +14,7 @@
     <None Remove="Assets\item-4.jpg" />
     <None Remove="Assets\item-5.jpg" />
     <None Remove="Assets\item-6.jpg" />
+    <None Remove="Assets\load.gif" />
     <None Remove="Assets\star.png" />
     <None Remove="Assets\user-1.png" />
     <None Remove="Assets\user-10.png" />
@@ -33,6 +34,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\item-6.jpg" />
+    <Resource Include="Assets\load.gif" />
     <Resource Include="Assets\star.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

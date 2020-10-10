@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
         xmlns:uc="clr-namespace:Demo.UserControls"
-        Title="demo1" Height="450" Width="800">
+        Title="demo1" Height="850" Width="800">
     <Window.Resources>
         <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="50,10"/>
@@ -73,12 +73,85 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="{x:Type Button}">
+
+            <Setter Property="Width" Value="100"></Setter>
+
+            <Setter Property="Height" Value="60"></Setter>
+
+            <Setter Property="Margin" Value="10"></Setter>
+
+            <Setter Property="FontSize" Value="20"></Setter>
+
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5">
+
+            </Setter>
+
+            <Setter Property="RenderTransform">
+
+                <Setter.Value>
+
+                    <!--使用RotateTransform时，一定要使用TransformGroup，否则不能进行动画哦-->
+
+                    <TransformGroup>
+
+                        <RotateTransform></RotateTransform>
+
+                    </TransformGroup>
+
+                </Setter.Value>
+
+            </Setter>
+
+            <Style.Triggers>
+
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+
+                    <EventTrigger.Actions>
+
+                        <BeginStoryboard>
+
+                            <Storyboard RepeatBehavior="Forever" Storyboard.TargetProperty="RenderTransform.Children[0].Angle">
+
+                                <DoubleAnimation From="0" To="360" Duration="0:0:2"></DoubleAnimation>
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+
+                    </EventTrigger.Actions>
+
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+
+                    <EventTrigger.Actions>
+
+                        <BeginStoryboard>
+
+                            <Storyboard Storyboard.TargetProperty="RenderTransform.Children[0].Angle">
+
+                                <DoubleAnimation To="0" Duration="0:0:1"/>
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+
+                    </EventTrigger.Actions>
+
+                </EventTrigger>
+
+            </Style.Triggers>
+
+        </Style>
     </Window.Resources>
 
     <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -96,6 +169,19 @@
 
 
         <uc:NavAttributesControl Grid.Row="1" Grid.Column="1"  Margin="0,20"/>
+        <StackPanel Grid.Row="2">
+            <Image Source="/assets/item-1.jpg" Height="100" Width="100" Stretch="Fill"
+                    Margin="10"></Image>
+            <Image Source="/assets/item-1.jpg" Height="100" Width="100" Stretch="Fill"
+                    Margin="10">
+                <Image.RenderTransform>
+                    <!--放大1.5倍-->
+                    <MatrixTransform Matrix="2 0 0 2 -50 0"></MatrixTransform>
+                </Image.RenderTransform>
+            </Image>
+
+            <Button Content="Test1"></Button>
+        </StackPanel>
     </Grid>
 
 </Window>

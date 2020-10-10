@@ -33,7 +33,7 @@ namespace Demo.UserControls
                     IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
-                    ItmeImageUrl="/assets/item-1.jpg"
+                    ItemImageUrl="/assets/item-1.jpg"
                 },
                 new CententModel
                 {
@@ -41,7 +41,7 @@ namespace Demo.UserControls
                     ProfilePictureImageUrl="/assets/user-3.png",
                     Title="设计示范区",
                     View=599,
-                    ItmeImageUrl="/assets/item-2.jpg"
+                    ItemImageUrl="/assets/item-2.jpg"
                 }, new CententModel
                 {
                     ProfileName="张3姐",
@@ -49,7 +49,71 @@ namespace Demo.UserControls
                     IsFavorites=true,
                     Title="广东设计示范区",
                     View=599,
-                    ItmeImageUrl="/assets/item-1.jpg"
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
+                }, new CententModel
+                {
+                    ProfileName="张3姐",
+                    ProfilePictureImageUrl="/assets/user-1.png",
+                    IsFavorites=true,
+                    Title="广东设计示范区",
+                    View=599,
+                    ItemImageUrl="/assets/item-1.jpg"
                 },
             };
 
@@ -62,7 +126,7 @@ namespace Demo.UserControls
         /// <summary>
         /// 图片路径
         /// </summary>
-        public string ItmeImageUrl { get; set; }
+        public string ItemImageUrl { get; set; }
         /// <summary>
         /// 查看次数
         /// </summary>
@@ -83,5 +147,13 @@ namespace Demo.UserControls
         /// 用户名字
         /// </summary>
         public string ProfileName { get; set; }
+        /// <summary>
+        /// 项目数
+        /// </summary>
+        public int Items { get; set; } = 0;
+        /// <summary>
+        /// 粉丝数
+        /// </summary>
+        public string Fans { get; set; } = "0";
     }
 }

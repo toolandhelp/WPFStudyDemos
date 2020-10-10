@@ -14,11 +14,13 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
         
         <uc:NavListControl  Grid.Row="0" />
         <uc:NavAttributesControl Grid.Row="1" />
         <uc:SortUserControl Grid.Row="2" Margin="35,20,0,0" />
         <uc:CenterListUserControl Grid.Row="3" Margin="35,5"/>
+        <uc:PageControl Grid.Row="4"/>
     </Grid>
 </Window>
