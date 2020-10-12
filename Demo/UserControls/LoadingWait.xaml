@@ -6,15 +6,22 @@
              xmlns:local="clr-namespace:Demo.UserControls"
              x:Name="_loadingWait"
              IsVisibleChanged="HandleVisibleChanged">
+    <!--Background="Red" Opacity="0.5"-->
     <UserControl.Background>
-        <!--<SolidColorBrush Color="{Binding ElementName=_loadingWait,Path=OpacityColor}" Opacity="{Binding ElementName=_loadingWait,Path=OpacityQuantity}" />-->
-        <SolidColorBrush Color="Gray" Opacity=".0"  />
+        <SolidColorBrush Color="{Binding ElementName=_loadingWait,Path=OpacityColor}" Opacity="{Binding ElementName=_loadingWait,Path=OpacityQuantity}" />
+        <!--<SolidColorBrush Color="Gray" Opacity=".0" />-->
     </UserControl.Background>
     
     <UserControl.Resources>
-        <!--<SolidColorBrush Color="{Binding ElementName=_loadingWait,Path=LoadPointColor}" x:Key="CirclesColor" />-->
-        <SolidColorBrush Color="Red" x:Key="CirclesColor" />
-        <!--<SolidColorBrush Color="Black" x:Key="BackgroundColor" Opacity=".20" />-->
+        <SolidColorBrush Color="Bisque" x:Key="CirclesColor" />
+        <Style x:Key="EllipseColor" TargetType="{x:Type Ellipse}">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Stretch" Value="Fill"/>
+            <Setter Property="Fill" Value="{Binding ElementName=_loadingWait,Path=LoadPointColor}"/>
+            <Setter Property="Canvas.Left" Value="0"/>
+            <Setter Property="Canvas.Top" Value="0"/>
+        </Style>
     </UserControl.Resources>
 
     <Viewbox Width="{Binding ElementName=_loadingWait,Path=LoadSize}"     
@@ -28,45 +35,19 @@
            
             <Canvas RenderTransformOrigin="0.5,0.5"    
                     HorizontalAlignment="Center"    
-                    VerticalAlignment="Center" Width="120"    
-                    Height="120" Loaded="HandleLoaded"    
+                    VerticalAlignment="Center"
+                    Width="120" Height="120"
+                    Loaded="HandleLoaded"    
                     Unloaded="HandleUnloaded"  >
-                <Ellipse x:Name="C0" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="1.0"/>
-                <Ellipse x:Name="C1" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.9"/>
-                <Ellipse x:Name="C2" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.8"/>
-                <Ellipse x:Name="C3" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.7"/>
-                <Ellipse x:Name="C4" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.6"/>
-                <Ellipse x:Name="C5" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.5"/>
-                <Ellipse x:Name="C6" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.4"/>
-                <Ellipse x:Name="C7" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.3"/>
-                <Ellipse x:Name="C8" Width="20" Height="20"    
-                         Canvas.Left="0"    
-                         Canvas.Top="0" Stretch="Fill"    
-                         Fill="{StaticResource CirclesColor}" Opacity="0.2"/>
+                <Ellipse x:Name="C0" Style="{StaticResource EllipseColor}" Opacity="1.0"/>
+                <Ellipse x:Name="C1" Style="{StaticResource EllipseColor}" Opacity="0.9"/>
+                <Ellipse x:Name="C2" Style="{StaticResource EllipseColor}" Opacity="0.8"/>
+                <Ellipse x:Name="C3" Style="{StaticResource EllipseColor}" Opacity="0.7"/>
+                <Ellipse x:Name="C4" Style="{StaticResource EllipseColor}" Opacity="0.6"/>
+                <Ellipse x:Name="C5" Style="{StaticResource EllipseColor}" Opacity="0.5"/>
+                <Ellipse x:Name="C6" Style="{StaticResource EllipseColor}" Opacity="0.4"/>
+                <Ellipse x:Name="C7" Style="{StaticResource EllipseColor}" Opacity="0.3"/>
+                <Ellipse x:Name="C8" Style="{StaticResource EllipseColor}" Opacity="0.2"/>
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="SpinnerRotate"    
                          Angle="0" />
