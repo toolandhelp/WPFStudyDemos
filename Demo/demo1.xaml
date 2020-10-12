@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
         xmlns:uc="clr-namespace:Demo.UserControls"
-        Title="demo1" Height="850" Width="800">
+        Title="demo1" Height="850" Width="800"
+        >
+    
     <Window.Resources>
         <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="50,10"/>
@@ -193,7 +195,7 @@
         <uc:NavAttributesControl Grid.Row="1" Grid.Column="1"  Margin="0,20"/>
         <StackPanel Grid.Row="2">
             <Border BorderBrush="Black" BorderThickness="1" ClipToBounds="True">
-                <Image Style="{StaticResource ImgTest}"/>
+                <Image Style="{StaticResource ImgTest}" RenderTransformOrigin="0.5,0.5"/>
             </Border>
             <!--<Image Source="/assets/item-1.jpg" Height="100" Width="100" Stretch="Fill"
                     Margin="10">
@@ -204,7 +206,95 @@
             </Image>-->
 
             <Button Content="Test1"></Button>
+            <MediaElement Source="file://G:\wpfStudy\dpWPF\WPFDemoStudy\Demo\Assets\load.gif" Stretch="Fill" Height="50" Width="50" MediaEnded="MediaElement_MediaEnded" />
+
+            <MediaElement x:Name="gifMedia"  Source="/assets/load.gif" Height="50" Width="50"  UnloadedBehavior="Manual"  LoadedBehavior="Play" />
+
+            <Image x:Name="runImg" Source="/assets/load.png" Height="50" RenderTransformOrigin="0.5,0.5"/>
         </StackPanel>
+
+        <Grid x:Name="LoadGrid" Visibility="Collapsed" IsVisibleChanged="HandleVisibleChanged">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.2"  />
+            </Grid.Background>
+            <Grid.Resources>
+                <SolidColorBrush Color="#FF007BE5" x:Key="CirclesColor" />
+                <!--<SolidColorBrush Color="Black" x:Key="BackgroundColor" Opacity=".20" />-->
+            </Grid.Resources>
+
+            <Viewbox Width="100" Height="100"  
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Center">
+                <Grid x:Name="LayoutRoot"   
+                Background="Transparent"  
+                ToolTip="Please wait...."  
+                HorizontalAlignment="Center"  
+                VerticalAlignment="Center">
+                    <TextBlock Text="Loading..."  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Foreground="#FFE3953D" FontWeight="Bold" />
+                    <Canvas RenderTransformOrigin="0.5,0.5"  
+                    HorizontalAlignment="Center"  
+                    VerticalAlignment="Center" Width="120"  
+                    Height="120" Loaded="HandleLoaded"  
+                    Unloaded="HandleUnloaded"  >
+                        <Ellipse x:Name="C0" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="1.0"/>
+                        <Ellipse x:Name="C1" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.9"/>
+                        <Ellipse x:Name="C2" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.8"/>
+                        <Ellipse x:Name="C3" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.7"/>
+                        <Ellipse x:Name="C4" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.6"/>
+                        <Ellipse x:Name="C5" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.5"/>
+                        <Ellipse x:Name="C6" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.4"/>
+                        <Ellipse x:Name="C7" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.3"/>
+                        <Ellipse x:Name="C8" Width="20" Height="20"  
+                         Canvas.Left="0"  
+                         Canvas.Top="0" Stretch="Fill"  
+                         Fill="{StaticResource CirclesColor}" Opacity="0.2"/>
+                        <Canvas.RenderTransform>
+                            <RotateTransform x:Name="SpinnerRotate"  
+                         Angle="0" />
+                        </Canvas.RenderTransform>
+                    </Canvas>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
+        <DockPanel Grid.Row="2" Grid.Column="2">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button  Content="show" Width="70" Height="30" Click="ShowButton_Click" />
+                <Button  Content="hide" Width="70" Height="30" Click="HideButton_Click"/>
+            </StackPanel>
+
+            <Grid Background="Blue" DockPanel.Dock="Bottom">
+                <TextBlock Text="asdfasdfasdf" Foreground="White"/>
+                <uc:LoadingWait x:Name="_loading" LoadSize="80"  OpacityColor="Red" OpacityQuantity="0.2" LoadShowText="加载中" LoadPointColor="Black"  Visibility="Collapsed"/>
+            </Grid>
+        </DockPanel>
+
+
+
     </Grid>
 
 </Window>

@@ -101,15 +101,15 @@
             <Setter Property="ArcThickness" Value="{Binding ElementName=_cardButton,Path=ProgressArcThickness}"/>
             <Setter Property="BackgroundBrush" Value="{Binding ElementName=_cardButton,Path=ProgressBackgroundBrush}"/>
             <Setter Property="IndicatorBrush" Value="{Binding ElementName=_cardButton,Path=ProgressIndicatorBrush}"/>
-            <Setter Property="PFontColor" Value="{Binding ElementName=cardButton,Path=ProgressTextColor}" />
-            <Setter Property="PFontWeight" Value="{Binding ElementName=cardButton,Path=ProgressTextWeight}"/>
+            <Setter Property="PFontColor" Value="{Binding ElementName=_cardButton,Path=ProgressTextColor}" />
+            <Setter Property="PFontWeight" Value="{Binding ElementName=_cardButton,Path=ProgressTextWeight}"/>
 
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}}" Value="true">
                     <Setter Property="BackgroundBrush" Value="{Binding ElementName=_cardButton,Path=ProgressBackgroundBrushMouseOver}"/>
                     <Setter Property="IndicatorBrush" Value="{Binding ElementName=_cardButton,Path=ProgressIndicatorBrushMouseOver}"/>
-                    <Setter Property="PFontColor" Value="{Binding ElementName=cardButton,Path=ProgressTextColorMouseOver}" />
-                    <Setter Property="PFontWeight" Value="{Binding ElementName=cardButton,Path=ProgressTextWeightMouseOver}" />
+                    <Setter Property="PFontColor" Value="{Binding ElementName=_cardButton,Path=ProgressTextColorMouseOver}" />
+                    <Setter Property="PFontWeight" Value="{Binding ElementName=_cardButton,Path=ProgressTextWeightMouseOver}" />
                 </DataTrigger>
             </Style.Triggers>
             
